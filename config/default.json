@@ -1,0 +1,6 @@
+{
+  "mongoURI": "mongodb+srv://vijeth:vijeth123@cluster0.iuhoy.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret":"mY-$oopEr_DuPer#HyPEr&BUmpeR*$ecREt@KeY",
+  "githubClientId": "fb3183ee4b2ef986eb9d",
+  "githubSecret": "fd8532e8c6e7575b373e95f9f4e9c555835c62f2"
+}
