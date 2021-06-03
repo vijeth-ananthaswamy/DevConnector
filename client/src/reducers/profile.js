@@ -7,6 +7,7 @@ import {
   UPDATE_PROFILE,
   PROFILE_ERROR,
   CLEAR_PROFILE,
+  SET_LOADING,
 } from '../actions/types';
 
 const initialState = {
@@ -39,6 +40,10 @@ export default function (state = initialState, action) {
 
     case CLEAR_PROFILE:
       return { ...state, profile: null, repos: [], loading: false };
+
+    case SET_LOADING: {
+      return { ...state, loading: true };
+    }
 
     default:
       return state;
