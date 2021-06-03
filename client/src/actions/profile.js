@@ -11,12 +11,15 @@ import {
   CLEAR_PROFILE,
   DELETE_ACCOUNT,
   PROFILE_ERROR,
+  SET_LOADING,
 } from './types';
 
 //Get current user profile:
 
 export const getCurrentProfileAction = () => async (dispatch) => {
   try {
+    dispatch({ type: SET_LOADING });
+
     const res = await axios.get('/api/profile/me');
 
     dispatch({
@@ -34,6 +37,8 @@ export const getCurrentProfileAction = () => async (dispatch) => {
 export const getAllProfilesAction = () => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
 
+  dispatch({ type: SET_LOADING });
+
   try {
     const res = await axios.get('/api/profile');
 
@@ -49,6 +54,7 @@ export const getAllProfilesAction = () => async (dispatch) => {
 export const getProfileByUserIdAction = (userId) => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
 
+  dispatch({ type: SET_LOADING });
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
